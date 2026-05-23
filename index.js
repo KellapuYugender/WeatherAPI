@@ -1,9 +1,14 @@
-const searchBtn = document.getElementById("btnId");
 const inputCity = document.getElementById("inputId");
+const searchBtn = document.getElementById("btnId");
+const city = document.getElementById("city");
 
 searchBtn.addEventListener("click", () => {
-  datefunc();
-  getWeatherInfo();
+  if (inputCity.value) {
+    datefunc();
+    getWeatherInfo();
+  } else {
+    city.innerText = "Search by city";
+  }
 });
 
 const datefunc = () => {
@@ -26,9 +31,6 @@ const datefunc = () => {
   date.innerText = `${months[dateInst.getMonth()]} ${dateInst.getDate()}, ${dateInst.getFullYear()}`;
 };
 
-const toCelsius = (tempF) => {
-  return ((tempF - 32) * (5 / 9)).toFixed(2);
-};
 const getWeatherInfo = async () => {
   try {
     const weatherDataFetch = await fetch(
@@ -43,7 +45,6 @@ const getWeatherInfo = async () => {
     const weatherData = await weatherDataFetch.json();
     console.log(weatherData);
 
-    const city = document.getElementById("city");
     const temp = document.getElementById("temp");
     const weatherInfo = document.getElementById("weatherInfo");
     const tempMax = document.getElementById("tempMax");
@@ -57,13 +58,19 @@ const getWeatherInfo = async () => {
      <img
           src=" https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png"
           alt="weather image"
-          class = "icon-cls"
         />
         <p>${weatherData.weather[0].description}</p>`;
 
-    tempMax.innerText = `${weatherData.main.temp_max}°C`;
+    tempMax.innerHTML = `
+        <h5>High</h5>
+        <p >${weatherData.main.temp_max}°C</p>
+        `;
+    tempMin.innerHTML = `
+        <h5>Low</h5>
+        <p >${weatherData.main.temp_min}°C</p>
+        `;
 
-    tempMin.innerText = `${weatherData.main.temp_min}°C`;
+    inputCity.value = "";
   } catch (err) {
     console.log(err);
   }

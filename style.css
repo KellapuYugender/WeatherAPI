@@ -23,12 +23,18 @@ body {
 .color-azure {
   color: azure;
 }
-.color-lime {
+/* .color-lime {
   color: limegreen;
+} */
+.text-shadow-white {
+  text-shadow: 1px 1px 1px white;
+}
+.text-shadow-black {
+  text-shadow: 2px 2px 1px black;
 }
 .main-div {
   text-align: center;
-  border: 3px solid white;
+  /* border: 3px solid white; */
   height: 500px;
   width: 420px;
 }
