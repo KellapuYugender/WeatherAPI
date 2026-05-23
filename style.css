@@ -1,0 +1,43 @@
+body {
+  min-height: 100vh; /*vh = view height */
+  background-image: url(./img/backimg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.font {
+  font-family: monospace;
+  font-size: large;
+  font-weight: bold;
+}
+.main-div {
+  border: 3px solid white;
+  height: 500px;
+  width: 420px;
+}
+
+.search-div {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+#inputId {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid black;
+  height: 15%;
+  width: 85%;
+  padding: 6px;
+  outline: none;
+}
+
+#btnId {
+  background: transparent;
+  border: none;
+}
