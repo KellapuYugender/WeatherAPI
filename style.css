@@ -1,3 +1,8 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
 body {
   min-height: 100vh; /*vh = view height */
   background-image: url(./img/backimg.jpg);
@@ -12,10 +17,17 @@ body {
 
 .font {
   font-family: monospace;
-  font-size: large;
+  font-size: larger;
   font-weight: bold;
 }
+.color-azure {
+  color: azure;
+}
+.color-lime {
+  color: limegreen;
+}
 .main-div {
+  text-align: center;
   border: 3px solid white;
   height: 500px;
   width: 420px;
@@ -24,9 +36,8 @@ body {
 .search-div {
   display: flex;
   justify-content: center;
-  margin-top: 40px;
+  margin: 30px 0px;
 }
-
 #inputId {
   background: transparent;
   border: none;
@@ -40,4 +51,28 @@ body {
 #btnId {
   background: transparent;
   border: none;
+}
+
+.dcInfo p {
+  font-size: 18px;
+}
+.dcInfo h1 {
+  margin-top: 15px;
+  margin-bottom: 3px;
+  font-size: 45px;
+}
+
+#weatherInfo p {
+  font-size: 25px;
+}
+
+#temp {
+  margin: 15px;
+  font-size: 50px;
+}
+.tempxInfo {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+  font-size: 35px;
 }

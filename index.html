@@ -11,7 +11,7 @@
     <title>Weather API</title>
   </head>
   <body>
-    <div class="main-div">
+    <div class="main-div font">
       <!-- search-->
       <div class="search-div">
         <input
@@ -25,8 +25,30 @@
         </button>
       </div>
 
-      <!-- date -->
+      <!-- Date & City -->
+      <div class="dcInfo">
+        <p id="date">Date</p>
+        <h1 id="city">Telangana</h1>
+      </div>
+
+      <!-- Weather info-->
+      <div id="weatherInfo"></div>
+
+      <!-- Temperature -->
+      <h1 id="temp" class="color-azure">16*c</h1>
+
+      <!-- Temperature Extra Info -->
+      <div class="tempxInfo color-azure">
+        <div>
+          <h5>High</h5>
+          <p id="tempMax">12.4</p>
+        </div>
+        <div>
+          <h5>Low</h5>
+          <p id="tempMin">12.4</p>
+        </div>
+      </div>
     </div>
   </body>
-  <script src="index.js"></script>
+  <script src="index.js" type="module"></script>
 </html>
