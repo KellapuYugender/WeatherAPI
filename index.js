@@ -1,13 +1,10 @@
 const inputCity = document.getElementById("inputId");
 const searchBtn = document.getElementById("btnId");
-const city = document.getElementById("city");
 
 searchBtn.addEventListener("click", () => {
   if (inputCity.value) {
     datefunc();
     getWeatherInfo();
-  } else {
-    city.innerText = "Search by city";
   }
 });
 
@@ -42,25 +39,32 @@ const getWeatherInfo = async () => {
       },
     );
 
+    // Parsing raw data
     const weatherData = await weatherDataFetch.json();
-    console.log(weatherData);
+    // console.log(weatherData);
 
+    // Declarations
+    const city = document.getElementById("city");
     const temp = document.getElementById("temp");
     const weatherInfo = document.getElementById("weatherInfo");
     const tempMax = document.getElementById("tempMax");
     const tempMin = document.getElementById("tempMin");
 
+    // City Name
     city.innerText = weatherData.name;
 
-    temp.innerText = `${weatherData.main.temp}°C`;
-
+    // Weather Icon and Description
     weatherInfo.innerHTML = `
-     <img
+        <img
           src=" https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png"
           alt="weather image"
         />
         <p>${weatherData.weather[0].description}</p>`;
 
+    // Actual temperature in Celcius
+    temp.innerText = `${weatherData.main.temp}°C`;
+
+    // Temperature Max and Min
     tempMax.innerHTML = `
         <h5>High</h5>
         <p >${weatherData.main.temp_max}°C</p>

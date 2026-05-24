@@ -23,9 +23,6 @@ body {
 .color-azure {
   color: azure;
 }
-/* .color-lime {
-  color: limegreen;
-} */
 .text-shadow-white {
   text-shadow: 1px 1px 1px white;
 }
@@ -35,14 +32,18 @@ body {
 .main-div {
   text-align: center;
   /* border: 3px solid white; */
-  height: 500px;
-  width: 420px;
+  height: 600px;
+  width: 510px;
+}
+
+.header {
+  font-size: 24px;
 }
 
 .search-div {
   display: flex;
   justify-content: center;
-  margin: 30px 0px;
+  margin: 18px 0px 30px 0px;
 }
 #inputId {
   background: transparent;
